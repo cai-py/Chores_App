@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
+import Tasks from './components/task_cards'
 
 class App extends React.Component {
     render(){
         return (
             <div className="App">
-                <h1>Hello, World!</h1>
+                <Tasks/>
             </div>
         )
     }

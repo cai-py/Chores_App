@@ -1,0 +1,99 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --black: #393E46;
+    --blue: #00ADB5;
+    --lightblue: #8FCCC5;
+    --white: #F7F0F0;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.taskgrid-container {
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    padding: 10px;
+    justify-content: center;
+}
+
+.task-grid {
+    background-color: var(--lightblue);
+    flex-grow: 1;
+    max-width: 650px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 10px;
+    border-radius: 25px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* @media screen and (max-width: 469) {
+    .task-grid {
+        justify-content: space-around;
+    }
+} */
+
+/* FLEX POSITIONING */
+.task-item {
+    background-color: var(--blue);
+    flex-grow: 3;
+    flex-shrink: 0;
+    flex-basis: 31%;
+}
+
+/* INTERIOR */
+.task-item {
+    margin: 0 5px 10px;
+
+    display: flex;
+    align-items: flex-end;
+
+    max-width: 31%;
+    min-width: 180px;
+    height: 200px;
+    border-radius: 25px;
+    /* background-image: url(https://via.placeholder.com/200x200); */
+}
+
+.card-title {
+    margin: 25px;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+/* .taskGrid {
+    list-style: none;
+    flex: 1 1 100%;
+    margin: 0 auto;
+
+    max-width: 800px;
+
+    background: lightpink;
+
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.taskItem {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 33%;
+}
+
+.card-img {
+    background-image: url(https://via.placeholder.com/200x200);
+} */
