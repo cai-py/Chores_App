@@ -12,88 +12,35 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.taskgrid-container {
+.chore-grid-container {
+    padding: 1rem;
+    max-width: 1200px;
     margin: 0 auto;
-    height: 100%;
-    display: flex;
-    align-items: stretch;
-    padding: 10px;
-    justify-content: center;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.task-grid {
-    background-color: var(--lightblue);
-    flex-grow: 1;
-    max-width: 650px;
-    margin: 0 auto;
-    list-style: none;
-    padding: 10px;
-    border-radius: 25px;
+@media (min-width: 450px) {
+    .chore-grid-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 700px) {
+    .chore-grid-container { grid-template-columns: repeat(3, 1fr); }
+}
+
+.chore-card {
+    background-color: dodgerblue;
+    color: white;
+    padding: 1rem;
+    height: 8rem;
 
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-}
-/* @media screen and (max-width: 469) {
-    .task-grid {
-        justify-content: space-around;
-    }
-} */
-
-/* FLEX POSITIONING */
-.task-item {
-    background-color: var(--blue);
-    flex-grow: 3;
-    flex-shrink: 0;
-    flex-basis: 31%;
-}
-
-/* INTERIOR */
-.task-item {
-    margin: 0 5px 10px;
-
-    display: flex;
     align-items: flex-end;
-
-    max-width: 31%;
-    min-width: 180px;
-    height: 200px;
-    border-radius: 25px;
-    /* background-image: url(https://via.placeholder.com/200x200); */
-}
-
-.card-title {
-    margin: 25px;
-    font-size: 25px;
 }
 
 
-
-
-
-
-
-/* .taskGrid {
-    list-style: none;
-    flex: 1 1 100%;
-    margin: 0 auto;
-
-    max-width: 800px;
-
-    background: lightpink;
-
-    display: flex; 
-    flex-wrap: wrap;
-    justify-content: space-between;
-    
-}
-
-.taskItem {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 33%;
-}
-
-.card-img {
-    background-image: url(https://via.placeholder.com/200x200);
-} */
+/* LINKS */
+/* Place holder image: https://via.placeholder.com/200x200 */
+/* Guide for grid layout: https://via.placeholder.com/200x200 */
