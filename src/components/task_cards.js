@@ -4,9 +4,9 @@ import axios from "axios";
 
 class Tasks extends React.Component {
     state = {
-        Chores: []
+        Chores: null
     }
-    componentDidMount = () => {
+    componentDidMount() {
         axios.get('https://chores-app-api.herokuapp.com/chores')
             .then(res => {
                 this.setState({
@@ -16,8 +16,19 @@ class Tasks extends React.Component {
     }
     render(){
         return (
-            <div className="chore-grid-container">
-                {console.log(this.state.Chores)}
+            <div>
+                {this.state.Chores != null &&
+                    <ul className="chore-grid-container">
+                        {this.state.Chores.map(chore => {
+                            return (
+                                <li className="chore-card">
+                                    <div>{chore.choreName}</div>
+                                    <div>{chore.points}</div>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                }
             </div>
         )
     }
