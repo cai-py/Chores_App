@@ -3,60 +3,21 @@ import './styles/task_cards.css'
 import axios from "axios";
 
 class Tasks extends React.Component {
+    state = {
+        Chores: []
+    }
     componentDidMount = () => {
         axios.get('https://chores-app-api.herokuapp.com/chores')
-            .then(function (response) {
-                console.log(response)
+            .then(res => {
+                this.setState({
+                    Chores: res.data
+                })
             })
     }
     render(){
         return (
             <div className="chore-grid-container">
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                <div className="chore-card">
-                    <div className="chore-name">Chore</div>
-                    <div className="chore-value">5</div>
-                </div>
-                
+                {console.log(this.state.Chores)}
             </div>
         )
     }
