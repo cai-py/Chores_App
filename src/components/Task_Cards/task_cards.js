@@ -17,8 +17,15 @@ class Tasks extends React.Component {
     componentDidMount() {
         axios.get('https://chores-app-api.herokuapp.com/chores')
             .then(res => {
+                let choresMap = new Map()
+                for (let chore of res.data) {
+                    choresMap.set(chore._id, chore)
+                }
+                return choresMap
+            })
+            .then(choresMap => {
                 this.setState({
-                    Chores: res.data
+                    Chores: choresMap
                 })
             })
     }
@@ -26,9 +33,10 @@ class Tasks extends React.Component {
     toggleTaskClicked(e) {
         let choreClicked = e.target.id
         this.setState({
-            currentChore: choreClicked,
+            currentChore: this.state.Chores.get(choreClicked),
             choreClicked: !this.state.choreClicked
         })
+        console.log(e.target.id)
         console.log(this.state.Chores)
     }
 
@@ -38,7 +46,7 @@ class Tasks extends React.Component {
                 {this.state.Chores != null &&
                     <div>
                         <ul className="chore-grid-container">
-                            {this.state.Chores.map(chore => {
+                            {Array.from(this.state.Chores.values()).map(chore => {
                                 return (
                                     <li className="chore-card" id={chore._id} key={chore._id} onClick={this.toggleTaskClicked}>
                                         <div>{chore.choreName}</div>

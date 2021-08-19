@@ -14,7 +14,7 @@ class Enter_Data extends React.Component {
             <div>
                 <div className="form-container" onClick={this.props.toggleTaskClicked}>
                     <div className="form">
-                        <h1>{this.props.Chores[0].choreName}</h1>
+                        <h1>{this.props.currentChore.choreName}</h1>
                     </div>
                 </div>
             </div>
