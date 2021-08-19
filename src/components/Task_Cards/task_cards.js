@@ -9,9 +9,10 @@ class Tasks extends React.Component {
         this.state = {
           Chores: null,
           currentChore: null,
-          choreClicked: false,
+          modal: false,
         };
-        this.toggleTaskClicked = this.toggleTaskClicked.bind(this);
+        this.taskSelected = this.taskSelected.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     componentDidMount() {
@@ -30,14 +31,20 @@ class Tasks extends React.Component {
             })
     }
 
-    toggleTaskClicked(e) {
-        let choreClicked = e.target.id
+    taskSelected(e) {
+        let choreClickedId = e.target.id
         this.setState({
-            currentChore: this.state.Chores.get(choreClicked),
-            choreClicked: !this.state.choreClicked
+            currentChore: this.state.Chores.get(choreClickedId),
+            modal: true
         })
-        console.log(e.target.id)
-        console.log(this.state.Chores)
+        // console.log(e.target.id)
+        // console.log(this.state.Chores)
+    }
+
+    closeModal() {
+        this.setState({
+            modal: false
+        })
     }
 
     render(){
@@ -48,18 +55,17 @@ class Tasks extends React.Component {
                         <ul className="chore-grid-container">
                             {Array.from(this.state.Chores.values()).map(chore => {
                                 return (
-                                    <li className="chore-card" id={chore._id} key={chore._id} onClick={this.toggleTaskClicked}>
+                                    <li className="chore-card" id={chore._id} key={chore._id} onClick={this.taskSelected}>
                                         <div>{chore.choreName}</div>
                                         <div>{chore.points}</div>
                                     </li>
                                 )
                             })}
                         </ul>
-                        {this.state.choreClicked && 
+                        {this.state.modal && 
                             <Enter_Data
-                                Chores={this.state.Chores}
                                 currentChore={this.state.currentChore}
-                                toggleTaskClicked={this.toggleTaskClicked}
+                                closeModal={this.closeModal}
                             />
                         }
                     </div>
