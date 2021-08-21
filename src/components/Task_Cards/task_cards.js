@@ -52,17 +52,17 @@ class Tasks extends React.Component {
             <div>
                 {this.state.Chores != null &&
                     <div>
-                        <ul className="chore-grid-container">
+                        <div className="chore-grid-container">
                             {Array.from(this.state.Chores.values()).map(chore => {
                                 return (
-                                    <li className="chore-card" id={chore._id} key={chore._id} onClick={this.taskSelected}>
+                                    <div className="chore-card" id={chore._id} key={chore._id} onClick={this.taskSelected}>
                                         <div>{chore.choreName}</div>
                                         <div>{chore.points}</div>
-                                    </li>
+                                    </div>
                                 )
                             })}
-                        </ul>
-                        {this.state.modal && 
+                        </div>
+                        {this.state.modal &&
                             <Enter_Data
                                 currentChore={this.state.currentChore}
                                 closeModal={this.closeModal}
