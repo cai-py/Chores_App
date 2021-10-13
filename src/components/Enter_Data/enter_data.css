@@ -39,8 +39,8 @@
     -ms-transform: translate(-50%, -50%);
     z-index: 500;
     background-color: var(--white);
-    padding: 1rem;
     width: 65%;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -48,21 +48,79 @@
 }
 
 .card-info-bar {
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     font-size: xx-large;
 }
 
 .users-container {
-    background-color: var(--lightblue);
-    min-height: 1rem;
     list-style: none;
+    width: 90%;
 
+    padding: 1rem;
+    margin: 0 auto 1rem;
+    
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.userButton {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    transition: all 0.2s;
+    background-color: var(--lightblue);
+}
+.userButton:hover {
+    background-color: var(--blue);
+}
+
+.submit-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 0 0 1rem;
 }
 
-.user {
-    text-decoration: none;
+.submit {
+    display: inline-block;
+    padding: 1em 4em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    transition: all 0.2s;
+    background-color: var(--lightblue);
 }
 
+.submit:hover {
+    background-color: var(--blue);
+}
+
+/* a.button3{
+     display:inline-block;
+     padding:0.3em 1.2em;
+     margin:0 0.3em 0.3em 0;
+     border-radius:2em;
+     box-sizing: border-box;
+     text-decoration:none;
+     font-family:'Roboto',sans-serif;
+     font-weight:300;
+     color:#FFFFFF;
+     background-color:#4eb5f1;
+     text-align:center;
+     transition: all 0.2s;
+    }
+    a.button3:hover{
+     background-color:#4095c6;
+    }
+    @media all and (max-width:30em){
+     a.button3{
+      display:block;
+      margin:0.2em auto;
+     }
+    } */

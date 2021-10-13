@@ -39,11 +39,14 @@ class Enter_Data extends React.Component {
                         <div className="users-container">
                             {Array.from(this.state.Users.values()).map(user => {
                                 return (
-                                    <button className="user" id={user._id} key={user._id}>
+                                    <button className="userButton" id={user._id} key={user._id}>
                                         <div>{user.userName}</div>
                                     </button>
                                 )
                             })}
+                        </div>
+                        <div className="submit-container">
+                            <button className="submit">Submit</button>
                         </div>
                     </div>
                 }
