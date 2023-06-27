@@ -16,7 +16,7 @@ class Tasks extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://chores-app-api.herokuapp.com/chores')
+        axios.get('https://chores-app-api-3550fe946076.herokuapp.com/chores')
             .then(res => {
                 let choresMap = new Map()
                 for (let chore of res.data) {

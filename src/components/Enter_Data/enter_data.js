@@ -11,7 +11,7 @@ class Enter_Data extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://chores-app-api.herokuapp.com/users')
+        axios.get('https://chores-app-api-3550fe946076.herokuapp.com/users')
             .then(res => {
                 let usersMap = new Map()
                 for (let user of res.data) {
